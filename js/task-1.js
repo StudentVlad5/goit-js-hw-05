@@ -1,17 +1,45 @@
-function makeTransaction(quantity, pricePerDroid) {
-  return !isNaN(Number(quantity)) && !isNaN(Number(pricePerDroid))
-    ? `You ordered ${quantity} droids worth ${
-        quantity * pricePerDroid
-      } credits!`
-    : "Wrong Params";
-}
+// Задача 1. Імена користувачів
 
-let resultText = "";
+const getUserNames = (users) => {
+  return users && users.length >= 0 ? users.map((it) => it?.name) : [];
+};
 
-resultText += `<li>${makeTransaction(5, 3000)}</li>`;
-resultText += `<li>${makeTransaction(3, 1000)}</li>`;
-resultText += `<li>${makeTransaction(10, 500)}</li>`;
-
-console.log(makeTransaction(5, 3000));
-console.log(makeTransaction(3, 1000));
-console.log(makeTransaction(10, 500));
+console.log(
+  getUserNames([
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      balance: 2811,
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      balance: 3821,
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      balance: 3793,
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      balance: 2278,
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      balance: 3951,
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      balance: 1498,
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      balance: 2764,
+    },
+  ])
+); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
