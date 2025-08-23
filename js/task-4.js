@@ -1,10 +1,23 @@
 // Задача 4. Загальний баланс
 
+//  без ланцюжка методів
+// const getTotalBalanceByGender = (users, gender) => {
+//   return Array.isArray(users) && gender
+//     ? users.reduce((a, b) => {
+//         return b?.gender === gender ? a + b?.balance : a;
+//       }, 0)
+//     : 0;
+// };
+
 const getTotalBalanceByGender = (users, gender) => {
   return Array.isArray(users) && gender
-    ? users.reduce((a, b) => {
-        return b?.gender === gender ? a + b?.balance : a;
-      }, 0)
+    ? users
+        .filter((it) => {
+          return it?.gender === gender;
+        })
+        .reduce((a, b) => {
+          return a + b?.balance;
+        }, 0)
     : 0;
 };
 
